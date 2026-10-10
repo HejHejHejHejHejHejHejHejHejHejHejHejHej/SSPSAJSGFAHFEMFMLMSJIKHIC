@@ -1,20 +1,35 @@
 import random
+while True:
+    N = random.randint(1,100)
+    x = 0
+    print(N)
+    print("gissa talet")
 
-N = random.randint(1,100)
-
-for x in range(0,7):
     while True:
-        try:
-            S = int(input("Svar: "))
-            break
-        except:
-            print("Hej")
-            continue
+        while True:
+            try:
+                S = int(input("Svar: "))
+                break
+            except:
+                print("du ska icke var dum i huvudet")
+                continue
 
-    if S == N:
-        print("Hejdå")
+        x = x+1
+
+        if S == N:
+            print("Hejdå")
+            break
+        elif S >= N:
+            print("Lägre")
+        elif S <= N:
+            print("Höger")
+
+        if x == 7:
+            break
+
+    print((x - 7)*-1, "poäng")
+    q = input("y är den knapp som bör vidröras om denna användare önskar försöka igen: ")
+    if q == "y":
+        continue
+    else:
         exit()
-    elif S >= N:
-        print("Lägre")
-    elif S <= N:
-        print("Höger")
