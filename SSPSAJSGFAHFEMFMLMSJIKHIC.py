@@ -2,7 +2,7 @@ import random
 while True:
     N = random.randint(1,100)
     x = 0
-    print(N)
+
     print("gissa talet")
 
     while True:
