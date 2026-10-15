@@ -1,35 +1,59 @@
 import random
+from bcolors import bcolors
 while True:
     N = random.randint(1,100)
     x = 0
+    print(N)
 
-    print("gissa talet")
+    print(bcolors.YELLOW + """
+          =============
+           gissa talet
+          =============
+          """)
 
     while True:
         while True:
             try:
-                S = int(input("Svar: "))
+                S = int(input(bcolors.YELLOW + "Svar: "))
                 break
             except:
-                print("du ska icke var dum i huvudet")
+                print(bcolors.DEFAULT + "du ska icke var dum i huvudet")
                 continue
 
-        x = x+1
-
+        if S == 0:
+            exit()
         if S == N:
-            print("Hejdå")
+            print(bcolors.GREEN + "Rätt")
             break
-        elif S >= N:
-            print("Lägre")
-        elif S <= N:
-            print("Höger")
+
+        x = x+1
 
         if x == 7:
             break
 
-    print((x - 7)*-1, "poäng")
-    q = input("y är den knapp som bör vidröras om denna användare önskar försöka igen: ")
-    if q == "y":
-        continue
-    else:
+        if S >= N:
+            print(bcolors.RED + "Lägre\n")
+        elif S <= N:
+            print(bcolors.BLUE + "Högre\n")
+
+    if x == 0:
+        print(bcolors.X + str((x - 7)*-1), "poäng\n")
+    elif x == 1:
+        print(bcolors.Q + str((x - 7)*-1), "poäng\n")
+    elif x == 2:
+        print(bcolors.W + str((x - 7)*-1), "poäng\n")
+    elif x == 3:
+        print(bcolors.E + str((x - 7)*-1), "poäng\n")
+    elif x == 4:
+        print(bcolors.R + str((x - 7)*-1), "poäng\n")
+    elif x == 5:
+        print(bcolors.T + str((x - 7)*-1), "poäng\n")
+    elif x == 6:
+        print(bcolors.Y + str((x - 7)*-1), "poäng\n")
+    elif x == 7:
+        print(bcolors.U + str((x - 7)*-1), "poäng\n")
+
+    
+    q = input(bcolors.YELLOW + "y är den knapp som bör vidröras om denna användare önskar försöka igen, (q)avsluta:")
+    if q == "q":
         exit()
