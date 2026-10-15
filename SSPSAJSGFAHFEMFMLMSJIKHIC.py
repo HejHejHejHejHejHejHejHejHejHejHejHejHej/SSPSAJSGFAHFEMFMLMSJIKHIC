@@ -1,14 +1,16 @@
 import random
 from bcolors import bcolors
+import subprocess
+CLEAR = "cls"
+subprocess.run(CLEAR, shell=True)
 while True:
     N = random.randint(1,100)
     x = 0
-    print(N)
 
-    print(bcolors.YELLOW + """
-          =============
-           gissa talet
-          =============
+    print(bcolors.YELLOW, bcolors.I + """
+          =============          
+           gissa talet           
+          =============          \033[0m
           """)
 
     while True:
@@ -21,6 +23,7 @@ while True:
                 continue
 
         if S == 0:
+            subprocess.run(CLEAR, shell=True)
             exit()
         if S == N:
             print(bcolors.GREEN + "Rätt")
@@ -56,4 +59,7 @@ while True:
     
     q = input(bcolors.YELLOW + "y är den knapp som bör vidröras om denna användare önskar försöka igen, (q)avsluta:")
     if q == "q":
+        subprocess.run(CLEAR, shell=True)
         exit()
+
+    subprocess.run(CLEAR, shell=True)
