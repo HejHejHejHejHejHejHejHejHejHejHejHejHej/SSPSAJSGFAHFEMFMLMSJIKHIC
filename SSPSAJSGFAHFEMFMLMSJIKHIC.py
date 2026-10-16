@@ -6,6 +6,7 @@ subprocess.run(CLEAR, shell=True)
 while True:
     N = random.randint(1,100)
     x = 0
+    print(N)
 
     print(bcolors.YELLOW, bcolors.I + """
           =============          
@@ -16,7 +17,7 @@ while True:
     while True:
         while True:
             try:
-                S = int(input(bcolors.YELLOW + "Svar: "))
+                S = int(input(bcolors.YELLOW + "Försök" + " " + str(x+1) + ":" ))
                 break
             except:
                 print(bcolors.DEFAULT + "du ska icke var dum i huvudet")
