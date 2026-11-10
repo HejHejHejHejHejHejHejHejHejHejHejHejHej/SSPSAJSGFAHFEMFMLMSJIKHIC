@@ -6,7 +6,7 @@ subprocess.run(CLEAR, shell=True)
 while True:
     N = random.randint(1,100)
     x = 0
-    print(N)
+    
     print(bcolors.YELLOW, bcolors.I + """
           =============          
            Gissa talet           
