@@ -7,12 +7,11 @@ while True:
     N = random.randint(1,100)
     x = 0
     print(N)
-
     print(bcolors.YELLOW, bcolors.I + """
           =============          
-           gissa talet           
-          =============          \033[0m
-          """)
+           Gissa talet           
+          =============          \033[0m""")
+    print(bcolors.YELLOW + "            (1-100)\n")
 
     while True:
         while True:
